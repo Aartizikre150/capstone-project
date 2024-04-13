@@ -39,6 +39,7 @@ components:
     col_widths: {}
     grid_position: QBPVWN,FDJDAK
     full_width_row: true
+    row_background: theme:White
   components:
   - type: ColumnPanel
     properties: {role: card, tooltip: '', border: '', foreground: '', visible: true,
@@ -196,98 +197,27 @@ components:
         horizontal_align: right}
       name: image_4
       layout_properties: {grid_position: 'KMHLNU,EYJOUZ'}
-  - type: ColumnPanel
+  - name: card_4_copy
     properties: {role: card, tooltip: '', border: '', foreground: '', visible: true,
-      wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{"UZJVCC":40,"BBXVAV":10,"FPKXVA":10}',
-      spacing_below: none, background: 'theme:Neutral'}
-    name: card_5
-    layout_properties: {grid_position: 'ALQSCF,DDHZHX', full_width_row: true}
+      wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{"MOQGVZ":67,"KEHJOF":50,"EYJOUZ":10,"IHXTJP":13}',
+      spacing_below: none, background: ''}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'JSPGDH,GYCYRT'}
     components:
-    - type: Label
-      properties: {role: text, align: center, tooltip: '', border: '', foreground: '',
-        visible: true, text: tiered pricing makes tutoring affordable., font_size: null,
-        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+    - name: image_3_copy
+      properties: {role: null, vertical_align: top, height: 99, tooltip: '', border: '',
+        foreground: '', visible: true, display_mode: shrink_to_fit, spacing_above: small,
+        source: _/theme/Aarti-modified.png, spacing_below: small, background: '',
+        horizontal_align: left}
+      type: Image
+      layout_properties: {grid_position: 'JNOSPQ,IHXTJP'}
+    - name: label_16_copy
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:Primary
+          500', visible: true, text: Aarti Anil Zikre, font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: none, italic: false,
         background: '', bold: false, underline: false, icon: ''}
-      name: label_21
-      layout_properties: {grid_position: 'MKEYKR,LBFRDO'}
-    - type: Label
-      properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-        visible: true, text: 'lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          etiam vestibulum, nibh ac iaculis fermentum, neque nulla consequat nulla,
-          non placerat metus turpis sit amet odio. Proin semper venenatis justo, et
-          gravida tellus ornare vitae. Integer vel tortor nec quam posuere rutrum
-          non volutpat ante. nunc in orci porttitor, finibus enim laoreet, rutrum
-          massa.', font_size: null, font: '', spacing_above: small, icon_align: left,
-        spacing_below: small, italic: false, background: '', bold: false, underline: false,
-        icon: ''}
-      name: label_22
-      layout_properties: {grid_position: 'ZHJVHE,FHCXMA'}
-    - type: Spacer
-      properties: {height: 32}
-      name: spacer_3
-      layout_properties: {grid_position: 'IASELP,BBXVAV'}
-    - type: DataGrid
-      properties:
-        role: null
-        columns:
-        - {id: WRSVQH, title: type of session, data_key: level, width: '', expand: false}
-        - {id: JJJXPT, title: 30-minute session, data_key: half-sesh, expand: false,
-          width: ''}
-        - {id: OGOGUA, title: 60-minute session, data_key: full-sesh, width: '', expand: false}
-        auto_header: false
-        tooltip: ''
-        border: ''
-        foreground: ''
-        rows_per_page: 20
-        visible: true
-        show_page_controls: false
-        spacing_above: small
-        spacing_below: small
-        background: ''
-      name: data_grid_1
-      layout_properties: {grid_position: 'IASELP,UZJVCC'}
-      components:
-      - type: DataRowPanel
-        properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-          auto_display_data: true, visible: true, item: null, font_size: null, font: '',
-          spacing_above: none, spacing_below: none, italic: false, background: '',
-          bold: false, underline: false}
-        name: data_row_panel_1
-        layout_properties: {pinned: true}
-        components:
-        - type: Label
-          properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:Primary
-              500', visible: true, text: 30-minute session, font_size: null, font: '',
-            spacing_above: small, icon_align: left, spacing_below: none, italic: false,
-            background: '', bold: true, underline: false, icon: ''}
-          name: label_1
-          layout_properties: {column: JJJXPT}
-        - type: Label
-          properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:Primary
-              500', visible: true, text: 60-minute session, font_size: null, font: '',
-            spacing_above: small, icon_align: left, spacing_below: none, italic: false,
-            background: '', bold: true, underline: false, icon: ''}
-          name: label_23
-          layout_properties: {column: OGOGUA}
-        - type: Label
-          properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:Primary
-              500', visible: true, text: Level, font_size: null, font: '', spacing_above: small,
-            icon_align: left, spacing_below: none, italic: false, background: '',
-            bold: true, underline: false, icon: ''}
-          name: label_24
-          layout_properties: {column: WRSVQH}
-      - type: RepeatingPanel
-        properties: {role: top-border, tooltip: '', border: '', foreground: '', items: null,
-          visible: true, spacing_above: none, spacing_below: none, item_template: Home.RowTemplate1,
-          background: ''}
-        name: repeating_panel_1
-        layout_properties: {}
-        data_bindings: []
-      data_bindings: []
-    - type: Spacer
-      properties: {height: 32}
-      name: spacer_2
-      layout_properties: {grid_position: 'IASELP,FPKXVA'}
+      type: Label
+      layout_properties: {grid_position: 'JNOSPQ,MOQGVZ BSOMWZ,AWQQTU'}
     - name: label_17_copy
       properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
         visible: true, text: '"Analytically-driven data enthusiast with a penchant
@@ -296,19 +226,29 @@ components:
         spacing_below: small, italic: true, background: '', bold: false, underline: false,
         icon: ''}
       type: Label
-      layout_properties: {grid_position: 'IASELP,ZWJKBK'}
-    - name: label_16_copy
-      properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:Primary
-          500', visible: true, text: Aarti Anil Zikre, font_size: null, font: '',
-        spacing_above: small, icon_align: left, spacing_below: none, italic: false,
+      layout_properties: {grid_position: 'JNOSPQ,MOQGVZ UIIPHX,NBHCSI'}
+    - name: label_18_copy
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: 'theme:Primary
+          500', visible: true, text: Andrews Truman, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: none, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      type: Label
+      layout_properties: {grid_position: 'KMHLNU,KEHJOF LSOSFO,VLKTUV'}
+    - name: label_19_copy
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+        visible: true, text: '“My group SAT prep classes were so helpful. I enjoyed
+          the group format because I was able to work with other students and learn
+          from them. I only had to take the SATs once, and I did really well. I definitely
+          don’t think I’d have been prepared if I studied on my own.”', font_size: null,
+        font: '', spacing_above: none, icon_align: left, spacing_below: small, italic: true,
         background: '', bold: false, underline: false, icon: ''}
       type: Label
-      layout_properties: {grid_position: 'IASELP,ZWJKBK'}
-    - name: image_3_copy
-      properties: {role: null, vertical_align: top, height: 99, tooltip: '', border: '',
-        foreground: '', visible: true, display_mode: shrink_to_fit, spacing_above: small,
-        source: _/theme/Aarti-modified.png, spacing_below: small, background: '',
-        horizontal_align: left}
+      layout_properties: {grid_position: 'KMHLNU,KEHJOF MTRUJV,DNCLDR'}
+    - name: image_4_copy
+      properties: {role: null, vertical_align: top, height: 95.33331298828125, tooltip: '',
+        border: '', foreground: '', visible: true, display_mode: shrink_to_fit, spacing_above: small,
+        source: _/theme/andrews-modified.png, spacing_below: small, background: '',
+        horizontal_align: right}
       type: Image
-      layout_properties: {grid_position: 'IASELP,ZWJKBK'}
+      layout_properties: {grid_position: 'KMHLNU,EYJOUZ'}
 is_package: true
