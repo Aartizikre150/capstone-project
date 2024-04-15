@@ -118,17 +118,26 @@ components:
       layout_properties: {grid_position: 'AAANPP,FBZEDZ YPIULJ,ZVZFRW'}
     - type: Label
       properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-        visible: true, text: Prime Category, font_size: null, font: '', spacing_above: small,
+        visible: true, text: Super Category, font_size: null, font: '', spacing_above: small,
         icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
         underline: false, icon: ''}
       name: label_12
       layout_properties: {grid_position: 'AAANPP,FBZEDZ ELEPNU,CCYBMI'}
-    - name: drop_down_1
+    - name: super_category
       properties:
-        items: [Automotive, 'Beauty, Health, Personal & Household Care', Electronics,
+        items: [None, Automotive, 'Beauty, Health, Personal & Household Care', Electronics,
           Fashion, Furniture, Media, 'Toys, Hobby & DIY']
       type: DropDown
       layout_properties: {grid_position: 'AAANPP,FBZEDZ UZCHBF,BMPCFV'}
+      event_bindings: {change: super_category_change}
+    - name: label_1
+      properties: {text: Primary Category, visible: true}
+      type: Label
+      layout_properties: {grid_position: 'AAANPP,FBZEDZ ZYWEAH,RCZHZP'}
+    - name: primary_category
+      properties: {visible: true, enabled: false}
+      type: DropDown
+      layout_properties: {grid_position: 'AAANPP,FBZEDZ EMSISI,AGDXIW'}
     - type: Image
       properties: {role: null, vertical_align: center, height: 296, tooltip: '', border: '',
         foreground: '', visible: true, display_mode: zoom_to_fill, spacing_above: small,

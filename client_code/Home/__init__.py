@@ -11,6 +11,8 @@ class Home(HomeTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    # Populate primary category dropdown
+    self.super_category.items = ['Fashion', 'Furniture', 'Beauty, Health, Personal & Household Care', 'Toys, Hobby & DIY', 'Electronics', 'Automotive', 'Media']
     #self.repeating_panel_1.items = app_tables.pricing.search()
 
     # Any code you write here will run when the form opens.
@@ -21,3 +23,7 @@ class Home(HomeTemplate):
     open_form(card_3)
     #self.content_panel.get_components()
     #self.content_panel.add_component(self.card_3, full_width_row=True)
+
+  def super_category_change(self, **event_args):
+    
+    
