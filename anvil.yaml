@@ -52,4 +52,30 @@ db_schema:
     - name: time
       admin_ui: {width: 200}
       type: datetime
+  ecommerce_data:
+    client: none
+    server: full
+    columns:
+    - name: super_category
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: main_category
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: sub_category_1
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: sub_category_2
+      admin_ui: {width: 200, order: 3}
+      type: string
+    - name: brand
+      admin_ui: {width: 200, order: 4}
+      type: string
+    - name: pname
+      admin_ui: {width: 200, order: 5}
+      type: string
+    - name: price
+      admin_ui: {width: 200, order: 6}
+      type: number
+    title: ecommerce_data
 renamed: true

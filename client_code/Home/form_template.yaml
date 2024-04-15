@@ -127,6 +127,7 @@ components:
       properties:
         items: [None, Automotive, 'Beauty, Health, Personal & Household Care', Electronics,
           Fashion, Furniture, Media, 'Toys, Hobby & DIY']
+        placeholder: Please choose your super category
       type: DropDown
       layout_properties: {grid_position: 'AAANPP,FBZEDZ UZCHBF,BMPCFV'}
       event_bindings: {change: super_category_change}
@@ -135,9 +136,69 @@ components:
       type: Label
       layout_properties: {grid_position: 'AAANPP,FBZEDZ ZYWEAH,RCZHZP'}
     - name: primary_category
-      properties: {visible: true, enabled: false}
+      properties:
+        visible: true
+        enabled: true
+        placeholder: Choose your Primary Category.
+        items: [None]
       type: DropDown
       layout_properties: {grid_position: 'AAANPP,FBZEDZ EMSISI,AGDXIW'}
+      event_bindings: {change: primary_category_change}
+    - name: label_11
+      properties: {text: 'First Sub Category '}
+      type: Label
+      layout_properties: {grid_position: 'AAANPP,FBZEDZ ONTUFL,YETQYR'}
+    - name: sub_category1
+      properties:
+        placeholder: Choose your First Sub Category
+        items: [None]
+      type: DropDown
+      layout_properties: {grid_position: 'AAANPP,FBZEDZ FGANMQ,QUYQTA'}
+      event_bindings: {change: sub_category1_change}
+    - name: label_13
+      properties: {text: 'Second Sub Category '}
+      type: Label
+      layout_properties: {grid_position: 'AAANPP,FBZEDZ XRJSHP,PZQONO'}
+    - name: sub_category2
+      properties:
+        placeholder: Choose your Second Sub Category
+        items: [None]
+      type: DropDown
+      layout_properties: {grid_position: 'AAANPP,FBZEDZ NYFQZM,SGDOTA'}
+      event_bindings: {change: sub_category2_change}
+    - name: label_21
+      properties: {text: 'Brand '}
+      type: Label
+      layout_properties: {grid_position: 'AAANPP,FBZEDZ YQNFEL,QOAAQE'}
+    - name: brand
+      properties:
+        placeholder: Choose your Brand Category
+        items: [None]
+      type: DropDown
+      layout_properties: {grid_position: 'AAANPP,FBZEDZ BPPWBQ,IJQHAP'}
+      event_bindings: {change: brand_change}
+    - name: label_14
+      properties: {text: Product Name}
+      type: Label
+      layout_properties: {grid_position: 'AAANPP,FBZEDZ SQYYMB,URQWGX'}
+    - name: product_name
+      properties:
+        placeholder: Choose your Product Name Category
+        items: [None]
+      type: DropDown
+      layout_properties: {grid_position: 'AAANPP,FBZEDZ YJRCIP,FPFGNJ'}
+    - name: label_20
+      properties: {text: Price}
+      type: Label
+      layout_properties: {grid_position: 'AAANPP,FBZEDZ HSLBWO,PAWHGD'}
+    - name: discounted_price
+      properties: {}
+      type: TextBox
+      layout_properties: {grid_position: 'AAANPP,FBZEDZ RMFWVV,RRNDEG'}
+    - name: Submit
+      properties: {text: Submit, background: 'theme:Primary 500', foreground: 'theme:White'}
+      type: Button
+      layout_properties: {grid_position: 'AAANPP,FBZEDZ LEOLKO,PATYMD'}
     - type: Image
       properties: {role: null, vertical_align: center, height: 296, tooltip: '', border: '',
         foreground: '', visible: true, display_mode: zoom_to_fill, spacing_above: small,
