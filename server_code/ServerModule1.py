@@ -55,9 +55,9 @@ def category_prediction(super_category, main_category, sub_category1, sub_catego
         print(__model.predict([x]))
 
         if __model.predict([x])[0] == 1:
-            result = "The customer order will be returned"
+            result = "There are high changes that customer will return this product."
         else:
-            result = "The customer order won't be returned"
+            result = "There are less changes that customer will return this product."
 
     return result
 
@@ -76,26 +76,26 @@ def load_saved_artefacts():
       __data_columns = json.load(f)['data_columns']
       __super_category = __data_columns[6:]
 
-    with open("main_category_frequency_encoding.json", "r") as f:
+    with open(data_files["main_category_frequency_encoding.json"], "r") as f:
       __main_category = json.load(f)
 
-    with open("product_name_frequency_encoding.json", "r") as f:
+    with open(data_files["product_name_frequency_encoding.json"], "r") as f:
        __product_name = json.load(f)
 
-    with open("sub_category1_frequency_encoding.json", "r") as f:
+    with open(data_files["sub_category1_frequency_encoding.json"], "r") as f:
        __sub_category1 = json.load(f)
 
-    with open("sub_category2_frequency_encoding.json", "r") as f:
+    with open(data_files["sub_category2_frequency_encoding.json"], "r") as f:
        __sub_category2 = json.load(f)
 
-    with open("brand_frequency_encoding.json", "r") as f:
+    with open(data_files["brand_frequency_encoding.json"], "r") as f:
        __brand = json.load(f)
 
     print("loading saved artefacts...done")
 
     global __model
     if __model is None:
-        with open("capstone_model.pkl", 'rb') as f:
+        with open(data_files["capstone_model.pkl"], 'rb') as f:
            __model = pickle.load(f)
     print("loading saved artefacts...done")
 

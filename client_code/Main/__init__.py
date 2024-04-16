@@ -49,7 +49,7 @@ class Main(MainTemplate):
   def lets_begin_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
-    self.content_panel.add_component(Home(lets_begin_click), full_width_row=True)
+    self.content_panel.add_component(Home(self.lets_begin_click), full_width_row=True)
     #self.content_panel.get_components()
     #self.content_panel.add_component(self.card_3, full_width_row=True)
 

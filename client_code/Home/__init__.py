@@ -5483,7 +5483,8 @@ class Home(HomeTemplate):
     
     if answer:
       self.result.visible = True
-      self.species_label.text = answer.predict()
+      self.result.text = answer
+      self.disclaimer.visible = True
 
 
 
