@@ -52,7 +52,7 @@ db_schema:
     - name: time
       admin_ui: {width: 200}
       type: datetime
-  ecommerce_data:
+  ecommerce:
     client: none
     server: full
     columns:
@@ -62,11 +62,11 @@ db_schema:
     - name: main_category
       admin_ui: {width: 200, order: 1}
       type: string
-    - name: sub_category_1
-      admin_ui: {width: 200, order: 2}
+    - name: sub_category1
+      admin_ui: {order: 2, width: 200}
       type: string
-    - name: sub_category_2
-      admin_ui: {width: 200, order: 3}
+    - name: sub_category2
+      admin_ui: {order: 3, width: 200}
       type: string
     - name: brand
       admin_ui: {width: 200, order: 4}
@@ -74,17 +74,14 @@ db_schema:
     - name: product_name
       admin_ui: {order: 5, width: 200}
       type: string
-    - name: discounted_price
-      admin_ui: {order: 6, width: 200}
-      type: number
-    - name: return
-      admin_ui: {width: 200, order: 7}
-      type: bool
     - name: time
       admin_ui: {width: 200, order: 8}
       type: datetime
     - name: email
       admin_ui: {order: 7.5, width: 200}
       type: string
-    title: ecommerce_data
+    - name: discounted_price
+      admin_ui: {order: 6.25, width: 200}
+      type: string
+    title: ecommerce
 renamed: true

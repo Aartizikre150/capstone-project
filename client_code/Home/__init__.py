@@ -5399,6 +5399,16 @@ sub1_to_product = {
   ' Wind Spinner Toys ': ['Yijun Suspended Wind Spinner'],
 }
 
+sup_to_sub = {
+  'Fashion': [' Luggage & Travel ', " Men's Clothing ", ' Necklaces & Chains ', " Kids' & Infant Footwear ", " Women's Clothing ", ' Bangles, Bracelets & Armlets ', " Men's Footwear ", " Women's Footwear ", " Kids' Clothing ", ' Accessories ', ' Jewellery Sets ', ' Bags ', ' Pendants & Lockets ', ' Nose Rings & Studs ', ' Mangalsutras & Tanmaniyas ', ' Wallets & Clutches ', ' Rings ', ' Artificial Jewellery ', ' Suspenders ', ' Anklets ', ' Frames ', ' Cufflinks ', ' Hair Accessories ', ' Precious Jewellery ', ' piftif Clothing ', ' Garment Covers ', ' Clovia Clothing ', ' Sonpra Clothing ', ' Belts ', ' fourgee Clothing ', ' Earrings '],
+  'Electronics': [' Mobile Accessories ', ' Tablet Accessories ', ' Wrist Watches ', ' Computer Components ', ' Camera Accessories ', ' Laptop Accessories ', ' Network Components ', ' Watch Accessories ', ' Computer Peripherals ', ' Storage ', ' Laptops ', ' Clocks ', ' Software ', ' Audio Players ', ' Wearable Accessories '],
+  'Toys, Hobby & DIY': [' Action Figures ', ' School Supplies ', ' Outdoor & Adventure ', ' Tools ', ' Team Sports ', ' Office Supplies ', ' College Supplies ', ' Track & Field ', ' Fitness Accessories ', ' Puzzles & Board Games ', ' Learning & Educational Toys ', ' Ride Ons ', ' Remote Control Toys ', ' Racquet Sports ', ' Party Supplies ', ' Diaries & Notebooks ', ' Calculators ', ' Other Sports ', ' Pens ', ' Indoor Sports & Games ', ' Musical Instruments & Toys ', ' Gaming Accessories ', ' Outdoor Toys ', ' Soft Toys ', ' C Kreul Toys & School Supplies ', ' Office Equipments ', ' Cars, Trains & Bikes ', ' Role Play Toys ', ' Educational Toys ', ' Dupli Color Toys & School Supplies ', ' Magic Kits ', ' Art Supplies ', ' Toy Guns & Weapons ', ' Naaz Toys & School Supplies ', ' Gaming Components ', ' Tuelip Toys & School Supplies ', ' Wind Spinner Toys '],
+  'Beauty, Health, Personal & Household Care': [' Baby Bath & Skin ', ' Personal Care Appliances ', ' Baby Bedding ', ' Fragrances ', ' Combos and Kits ', ' Baby & Kids Gifts ', ' Makeup ', ' Infant Wear ', ' Body and Skin Care ', ' Feeding & Nursing ', ' Storage & Feeding Utensils ', ' Hair Care ', ' Bath and Spa ', ' Diapering & Potty Training ', ' Health Care ', ' Furniture & Furnishings ', ' Toys ', ' Grooming ', ' Eye Care ', ' Strollers & Activity Gear ', ' Baby Grooming ', ' Habitat ', ' Health & Nutrition ', ' Pet Apparel ', ' Beauty Accessories ', " Men's Grooming ", ' Food & Health Supplies ', " Women's Hygiene ", ' Health & Safety '],
+  'Furniture': [' Wall Decor & Clocks ', ' Decorative Lighting & Lamps ', ' Bed Linen ', ' Bath Linen ', ' Curtains & Accessories ', ' Showpieces ', ' Housekeeping & Laundry ', ' Table Decor & Handicrafts ', ' Cushions, Pillows & Covers ', ' Coffee Mugs ', ' Kitchen & Dining Linen ', ' Showpiece ', ' Lawn & Gardening ', ' Containers & Bottles ', ' Floor Coverings ', ' Flowers, Plants & Vases ', ' Cookware ', ' Home Cleaning ', ' Religion & Devotion ', ' Living Room ', ' Kitchen Appliances ', ' Kitchen Tools ', ' Home Appliances ', ' Pressure Cookers & Pans ', ' Home Utilities ', ' Festive Decor ', ' Tableware & Cutlery ', ' Tools ', ' Living ', ' Tidy Home Furnishing ', ' Lighting ', ' Home Storage & Organization ', ' Electricals ', ' Living Room Furnishing ', ' Candles & Fragrances ', ' JMD Home Furnishing ', ' Seating Furniture ', ' Living Room Furniture ', ' Bar & Glassware ', ' Outdoor & Cafeteria Furniture ', ' Bakeware ', ' Hardware ', ' Study & Home Office Furniture ', ' Kids Room Furniture ', ' Dinnerware & Crockery ', ' Bedroom Furniture ', ' Bar Furniture ', ' Kitchen & Dining Furniture ', ' Storage Furniture ', ' Garden & Leisure ', ' sovam Home Furnishing ', ' Seating ', ' General Utility Furniture ', ' Sanitaryware ', " Kripa's Home Furnishing ", ' Consumables & Disposables ', ' Flasks & Casseroles ', ' Palakz Kitchen & Dining '],
+  'Automotive': [' Accessories & Spare parts ', ' Car & Bike Accessories ', ' Car Accessories '],
+  'Media': [' Science ', ' Academic Texts ', ' Video Players & Accessories ', ' Religion & Spirituality ', ' Home Audio ', ' Audio Players ', ' MP3 players/Ipods Accessories ']
+}
+
 class Home(HomeTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -5420,6 +5430,8 @@ class Home(HomeTemplate):
     selected_super_category = self.super_category.selected_value
     if selected_super_category in Super_to_product:
       self.product_name.items = Super_to_product[selected_super_category]
+    if selected_super_category in sup_to_sub:
+      self.sub_category1.items = sup_to_sub[selected_super_category]
     if selected_super_category in category_mapping:
       self.primary_category.items = category_mapping[selected_super_category]
     else:
@@ -5458,19 +5470,15 @@ class Home(HomeTemplate):
       self.product_name.items = ['None']
 
   def Submit_click(self, **event_args):
-    product_name = self.product_name.selected_value.strip()
-    main_category = self.primary_category.selected_value.strip()
-    sub_category1 = self.sub_category1.selected_value.strip()
-    sub_category2 = self.sub_category2.selected_value.strip()
-    brand = self.brand.selected_value.strip()
-    discounted_price = self.discounted_price.text.strip()
-    super_category = self.super_category.selected_value.strip()
-    email = self.email.text.strip()
-    # Assign a default email if it's empty
-    if not email:
-      email = "zikreaarti1998@gmail.com"
- 
-    anvil.server.call('add_ecommerce_data_info',super_category,main_category,sub_category1,sub_category2,brand,product_name,discounted_price,email)
+    product_name = self.product_name.selected_value
+    main_category = self.primary_category.selected_value
+    sub_category1 = self.sub_category1.selected_value
+    sub_category2 = self.sub_category2.selected_value
+    brand = self.brand.selected_value
+    discounted_price = self.discounted_price.text
+    super_category = self.super_category.selected_value
+    email = self.email.text
+    anvil.server.call('add_ecommerce_info', super_category, main_category, sub_category1, sub_category2, brand, product_name, discounted_price, email)
 
 
 
