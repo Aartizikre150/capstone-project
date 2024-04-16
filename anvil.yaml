@@ -71,11 +71,20 @@ db_schema:
     - name: brand
       admin_ui: {width: 200, order: 4}
       type: string
-    - name: pname
-      admin_ui: {width: 200, order: 5}
+    - name: product_name
+      admin_ui: {order: 5, width: 200}
       type: string
-    - name: price
-      admin_ui: {width: 200, order: 6}
+    - name: discounted_price
+      admin_ui: {order: 6, width: 200}
       type: number
+    - name: return
+      admin_ui: {width: 200, order: 7}
+      type: bool
+    - name: time
+      admin_ui: {width: 200, order: 8}
+      type: datetime
+    - name: email
+      admin_ui: {order: 7.5, width: 200}
+      type: string
     title: ecommerce_data
 renamed: true
