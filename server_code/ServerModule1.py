@@ -72,31 +72,31 @@ def load_saved_artefacts():
     global __sub_category2
     global __brand
 
-    with open("columns.json", "r") as f:
-        __data_columns = json.load(f)['data_columns']
-        __super_category = __data_columns[6:]
+    with open(data_files["columns.json"], "r") as f:
+      __data_columns = json.load(f)['data_columns']
+      __super_category = __data_columns[6:]
 
     with open("main_category_frequency_encoding.json", "r") as f:
-        __main_category = json.load(f)
+      __main_category = json.load(f)
 
     with open("product_name_frequency_encoding.json", "r") as f:
-        __product_name = json.load(f)
+       __product_name = json.load(f)
 
     with open("sub_category1_frequency_encoding.json", "r") as f:
-        __sub_category1 = json.load(f)
+       __sub_category1 = json.load(f)
 
     with open("sub_category2_frequency_encoding.json", "r") as f:
-        __sub_category2 = json.load(f)
+       __sub_category2 = json.load(f)
 
     with open("brand_frequency_encoding.json", "r") as f:
-        __brand = json.load(f)
+       __brand = json.load(f)
 
     print("loading saved artefacts...done")
 
     global __model
     if __model is None:
         with open("capstone_model.pkl", 'rb') as f:
-            __model = pickle.load(f)
+           __model = pickle.load(f)
     print("loading saved artefacts...done")
 
 @anvil.server.callable
