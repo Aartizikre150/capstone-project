@@ -7,12 +7,18 @@ services:
 - source: /runtime/services/anvil/email.yml
   client_config: {}
   server_config: {}
+- source: /runtime/services/anvil/files.yml
+  client_config: {}
+  server_config: {file_table: files}
 startup: {type: form, module: Main}
 package_name: Simple_Website_Template
 allow_embedding: false
 name: ICT Ignite
-runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
-  server_spec: null}
+runtime_options:
+  version: 2
+  client_version: '3'
+  server_version: python3-sandbox
+  server_spec: {base: python310-minimal}
 metadata: {logo_img: '', title: Ecommerce return prediction}
 startup_form: null
 native_deps: {head_html: '<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
@@ -84,4 +90,18 @@ db_schema:
       admin_ui: {order: 6.25, width: 200}
       type: string
     title: ecommerce
+  files:
+    client: none
+    server: full
+    columns:
+    - name: path
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: file
+      admin_ui: {order: 1, width: 200}
+      type: media
+    - name: file_version
+      admin_ui: {order: 2, width: 200}
+      type: string
+    title: Files
 renamed: true

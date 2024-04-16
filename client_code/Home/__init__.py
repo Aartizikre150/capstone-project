@@ -5470,15 +5470,20 @@ class Home(HomeTemplate):
       self.product_name.items = ['None']
 
   def Submit_click(self, **event_args):
-    product_name = self.product_name.selected_value
-    main_category = self.primary_category.selected_value
-    sub_category1 = self.sub_category1.selected_value
-    sub_category2 = self.sub_category2.selected_value
-    brand = self.brand.selected_value
+    product_name = self.product_name.selected_value.strip()
+    main_category = self.primary_category.selected_value.strip()
+    sub_category1 = self.sub_category1.selected_value.strip()
+    sub_category2 = self.sub_category2.selected_value.strip()
+    brand = self.brand.selected_value.strip()
     discounted_price = self.discounted_price.text
-    super_category = self.super_category.selected_value
+    super_category = self.super_category.selected_value.strip()
     email = self.email.text
     anvil.server.call('add_ecommerce_info', super_category, main_category, sub_category1, sub_category2, brand, product_name, discounted_price, email)
+    answer = anvil.server.call('predict', super_category, main_category, sub_category1, sub_category2, brand, product_name, discounted_price)
+    
+    if answer:
+      self.result.visible = True
+      self.species_label.text = answer.predict()
 
 
 
